@@ -1,0 +1,2 @@
+window.AURA_PRICES={"currency": "$", "services": {"landing": 150, "shop": 350, "account": 450, "automation": 75}, "builder": {"base": {"shop": 350, "services": 150, "booking": 250, "food": 325}, "add": {"cart": 100, "booking": 75, "form": 0, "tg": 40, "account": 150, "benefits": 0, "reviews": 15, "faq": 10, "lang": 60}}};
+window.AURA_LEAD_URL="https://script.google.com/macros/s/AKfycbxAyddbG-SitWoxL92ZjHK8Ns8lDLollUaOZog5dSas5MshISG77iLfTQ9Qxg9F3sC5/exec";

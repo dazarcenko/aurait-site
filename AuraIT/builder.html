@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Конструктор сайта | AuraIT</title>
+<meta name="description" content="Соберите сайт за четыре шага и попробуйте, как он принимает заказы.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&family=Jost:wght@500;600;700&family=Unbounded:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/builder.css">
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><span class="orb"></span>AuraIT</a>
+    <ul>
+      <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="portfolio.html">Портфолио</a></li>
+      <li><a href="builder.html" aria-current="page">Конструктор</a></li>
+      <li><a href="about.html">О нас</a></li>
+      <li><a href="index.html#faq">Вопросы</a></li>
+    </ul>
+    <button class="btn btn-main" type="button" data-order>Написать нам</button>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+<main class="b-flow">
+  <nav class="b-dots" aria-label="Шаги конструктора">
+    <a href="#step-type" class="on"><span>Бизнес</span><i></i></a>
+    <a href="#step-name"><span>Название</span><i></i></a>
+    <a href="#step-features"><span>Функции</span><i></i></a>
+    <a href="#step-style"><span>Стиль</span><i></i></a>
+  </nav>
+
+  <section class="b-step" id="step-type">
+    <div class="wrap">
+      <p class="b-num">Конструктор AuraIT · шаг 1 из 4</p>
+      <h2>Какой у вас бизнес?</h2>
+      <div class="b-types" id="bTypes"></div>
+    </div>
+  </section>
+
+  <section class="b-step" id="step-name">
+    <div class="wrap">
+      <p class="b-num">Шаг 2 из 4</p>
+      <h2>Как он называется?</h2>
+      <input class="b-name" id="bName" maxlength="28" autocomplete="off" aria-label="Название сайта">
+      <p class="b-addr">Адрес сайта: <b id="bAddr">moy-magazin.ru</b></p>
+      <a class="btn btn-main b-next" href="#step-features">Дальше <span class="arr">↓</span></a>
+    </div>
+  </section>
+
+  <section class="b-step alt" id="step-features">
+    <div class="wrap">
+      <p class="b-num">Шаг 3 из 4</p>
+      <h2>Что должен уметь сайт?</h2>
+      <p class="sub">Главная страница и каталог есть всегда. Отметьте, что нужно ещё. «Рекомендуем» стоит у того, что обычно нужно вашему типу бизнеса.</p>
+      <div class="b-feat">
+        <div class="b-toggles" id="bToggles"></div>
+        <aside class="b-sum" aria-label="Ваш сайт">
+          <p class="b-num">Ваш сайт</p>
+          <p class="fs-count" id="fsCount"></p>
+          <ul class="fs-list" id="fsList" aria-live="polite"></ul>
+          <div class="fs-total"><span>Итого</span><b id="fsSum"></b></div>
+          <a class="btn btn-main" href="#step-style">Дальше <span class="arr">↓</span></a>
+          <button class="fs-reset" id="fsReset" type="button">Вернуть рекомендованное</button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="b-step alt-m" id="step-style">
+    <div class="wrap">
+      <p class="b-num">Шаг 4 из 4</p>
+      <h2>Последний штрих</h2>
+      <div class="b-final">
+        <div class="b-style">
+          <h3>Цвет</h3><div class="b-colors" id="bColors"></div>
+          <h3>Шрифт</h3><div class="b-fonts" id="bFonts"></div>
+        </div>
+        <div class="b-total">
+          <span class="lbl">Примерная стоимость</span>
+          <span class="sum" id="bSum">от 0</span>
+          <small>Точную цену назовём после короткого разговора.</small>
+          <button class="btn b-make" id="bMake" type="button">Сделать сайт <span class="arr">→</span></button>
+          <button class="btn btn-line" id="bSend" type="button">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="b-ov" id="bOv" role="dialog" aria-modal="true" aria-label="Ваш тестовый сайт">
+  <div class="b-ovbar">
+    <button class="btn btn-line" id="bBack" type="button">← Изменить</button>
+    <span class="b-hint"><i></i>Тестовый сайт, нажимайте на кнопки</span>
+    <span class="sp"></span>
+    <div class="b-dev"><button type="button" data-dev="desktop" aria-pressed="true">Компьютер</button><button type="button" data-dev="phone" aria-pressed="false">Телефон</button></div>
+    <span class="sum-mini" id="bSumMini"></span>
+    <button class="btn btn-main" id="bOrder" type="button">Хочу такой сайт</button>
+  </div>
+  <div class="b-ovbody">
+    <div class="b-device" id="bDevice">
+      <div class="b-chrome"><i></i><i></i><i></i><span id="bUrl">site.ru</span></div>
+      <div class="b-screen" id="bScreen"><div class="b-site" id="site"></div><div class="ps-ov" id="psOv"></div></div>
+    </div>
+    <div class="b-tg" id="bTg" aria-label="Уведомления в Telegram">
+      <div class="tg-head"><span class="tg-ava"></span><div><b>Заказы с сайта</b><small>бот в Telegram</small></div></div>
+      <div class="tg-body" id="tgBody"><p class="tg-empty">Сюда приходят заказы, заявки и записи с сайта. Оформите что-нибудь на сайте слева.</p></div>
+      <p class="tg-off" id="tgOff" hidden>Уведомления выключены. Нажмите «Изменить» и включите «Заказы в Telegram».</p>
+    </div>
+    <button class="btn btn-main tg-fab" id="tgFab" type="button">Telegram <span class="tg-n" id="tgCount">0</span></button>
+    <div class="b-build" id="bBuild" aria-live="polite">
+      <div>
+        <p class="b-num">AuraIT</p>
+        <h2>Собираем ваш сайт</h2>
+        <ul id="bBuildList"></ul>
+        <div class="b-load"><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="fbig" aria-hidden="true">AuraIT</div>
+    <div class="fmeta">
+      <span>© 2026 AuraIT</span>
+      <nav class="flinks"><a href="service-landing.html">Лендинги</a><a href="service-shop.html">Магазины</a><a href="service-account.html">Кабинеты</a><a href="service-automation.html">Автоматизация</a><a href="portfolio.html">Портфолио</a><a href="builder.html">Конструктор</a><a href="about.html">О нас</a><a href="https://t.me/oblachniy29" target="_blank" rel="noopener">Telegram</a></nav>
+    </div>
+  </div>
+</footer>
+<div class="om" id="om" data-lead="https://script.google.com/macros/s/AKfycbxAyddbG-SitWoxL92ZjHK8Ns8lDLollUaOZog5dSas5MshISG77iLfTQ9Qxg9F3sC5/exec" role="dialog" aria-modal="true" aria-labelledby="omTitle" hidden>
+  <div class="om-bg" data-close></div>
+  <div class="om-card">
+    <button class="om-x" type="button" aria-label="Закрыть" data-close><i></i><i></i></button>
+    <form class="om-form" id="omForm" novalidate>
+      <h2 id="omTitle">Оставьте номер</h2>
+      <p>Перезвоним, обсудим задачу и назовём цену и срок.</p>
+      <label class="om-field"><span>Телефон</span><input id="omPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+375 (29) 123-45-67"><em id="omErr" aria-live="polite"></em></label>
+      <button class="btn btn-main om-go" type="submit">Отправить <span class="arr">→</span></button>
+      <p class="om-alt">Или напишите нам в Telegram: <a href="https://t.me/oblachniy29" target="_blank" rel="noopener">@oblachniy29</a></p>
+      <small>Нажимая кнопку, вы соглашаетесь на обработку номера телефона для связи с вами.</small>
+    </form>
+    <div class="om-done" id="omDone" hidden>
+      <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+      <h2>Спасибо!</h2>
+      <p>Наша команда скоро свяжется с вами: напишет в Telegram или позвонит.</p>
+      <button class="btn btn-line" type="button" data-close>Хорошо</button>
+    </div>
+  </div>
+</div>
+<script src="js/prices.js"></script>
+<script src="js/site.js"></script>
+<script src="js/builder.js"></script>
+</body>
+</html>
